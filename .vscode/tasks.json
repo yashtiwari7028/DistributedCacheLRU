@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build LRUCache with ZooKeeper",
+      "type": "shell",
+      "command": "/opt/homebrew/bin/g++-15",
+      "args": [
+        "-std=c++17",
+        "-g",
+        "LRUCache.cpp",
+        "-o",
+        "LRUCache",
+        "-I/opt/homebrew/include",           // ZooKeeper headers
+        "-L/opt/homebrew/lib",               // ZooKeeper libs
+        "-lzookeeper_mt"                     // ZooKeeper multithreaded lib
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}
